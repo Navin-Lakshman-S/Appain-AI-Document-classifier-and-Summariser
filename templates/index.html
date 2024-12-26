@@ -1,0 +1,181 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appain AI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f7fc;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            background-color: #343a40;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            margin-top: auto;
+        }
+        .container {
+            margin-top: 30px;
+        }
+        .card {
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Appain AI</h1>
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-lg">
+                    <div class="card-body">
+                        <h4 class="card-title">Upload PDF Document</h4>
+                        <form action="{{ url_for('classify') }}" method="POST" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="pdf_file">Select PDF File:</label>
+                                <input type="file" class="form-control-file" id="pdf_file" name="pdf_file" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Classify</button>
+                        </form>
+                    </div>
+                </div>
+                {% if document_type %}
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <h4 class="card-title">Document Classification Result</h4>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Document Type</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{{ document_type }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Appain AI | All Rights Reserved</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appain AI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        html, body {
+            height: 100%; /* Ensure full height for body and html */
+            margin: 0; /* Remove default margin */
+            display: flex; /* Use flexbox for layout */
+            flex-direction: column; /* Stack children vertically */
+        }
+        body {
+            background-color: #f4f7fc;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            background-color: #343a40;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            margin-top: auto; /* Push footer to the bottom */
+        }
+        .container {
+            margin-top: 30px;
+            flex: 1; /* Allow the container to grow and fill available space */
+        }
+        .card {
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Appain AI</h1>
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-lg">
+                    <div class="card-body">
+                        <h4 class="card-title">Upload PDF Document</h4>
+                        <form action="{{ url_for('classify') }}" method="POST" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="pdf_file">Select PDF File:</label>
+                                <input type="file" class="form-control-file" id="pdf_file" name="pdf_file" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Classify</button>
+                        </form>
+                    </div>
+                </div>
+                {% if document_type %}
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <h4 class="card-title">Document Classification Result</h4>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Document Type</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{{ document_type }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Appain AI | All Rights Reserved</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
